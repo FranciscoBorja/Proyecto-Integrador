@@ -1,0 +1,5 @@
+En el cliente usar el npm install.
+En el server utiliar el artisan install 
+en el .env configurar la base de datos a la que se use
+ejecutar el siguiente comando en el server php artisan migrate 
+se crearan la migraciones en la base de datos.
