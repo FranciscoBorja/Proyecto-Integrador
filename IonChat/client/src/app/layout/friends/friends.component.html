@@ -1,0 +1,22 @@
+
+<div>
+  <ul class="list-grup list-group-flush" *ngFor="let items of amigos">
+    <div class="card">
+      <div class="row">
+        <div class="col-1">   
+        <img class="rounded mb-2" src="assets/images/user.png" height="100px" width="100px"  >
+        </div>
+        <div class="col-9">
+
+        <i class="fas fa-user-circle">Talvez conozcas a {{items.nombre}}</i> 
+     
+      <li class="list-group-item"> 
+          
+        <button type="button" style="width: 2rem;"><i class="fas fa-plus"></i></button>
+        <button type="button" style="width: 2rem;"><i class="fas fa-times"></i></button>
+      </li>
+    </div>
+     </div>
+    </div>
+  </ul>
+</div>

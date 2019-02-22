@@ -1,0 +1,80 @@
+<div class="container-fluid marginPortada">
+  <div class="row">
+    <div class="divfotoPortada">
+      <img (click)="filePortada.click()" src="{{listImage}}" class="card-img img-thumbnail fotoPortada col-12">
+      <input hidden=true type="file" id="foto" placeholder="Fotografía" #filePortada
+        (change)="savePicturePortada($event)" accept="image/*">
+      <h2 class="userNames text-ligth">{{user.name}} {{user.lastName}}</h2>
+      <div class="contenedorFotoPortada col-2">
+        <img (click)="fileInput.click()" class="card-img img-thumbnail fotoPerfilPortada rounded-circle"
+          src="{{srcFoto}}" />
+        <input hidden=true type="file" id="foto" placeholder="Fotografía" #fileInput (change)="CodificarArchivo($event)"
+          accept="image/*">
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<div class="row">
+  <div class="col-3">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header" [routerLink]="['/profile']">
+        <i class="fas fa-edit"></i> Editar Perfil
+      </div>
+    </div>
+    <br />
+    <div class="card" style="width: 18rem;">
+      <div class="card-header"><i class="far fa-image"></i> Fotos</div>
+      <div class="foto ">
+        <img class="card-img" src="../../../assets/home.jpg" class="fotos" />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <div class="muro-scroll">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title"><i class="fas fa-edit"></i>Publicacion</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <form>
+                <textarea type="text" class="form-control" [(ngModel)]="content" name="content"></textarea>
+                <br>
+                <div class="text-right">
+                  <button type="button" class="btn btn-outline-primary" (click)="publicate()">Publicar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div *ngFor="let item of listPublication">
+        <div class="card alert-secondary">
+          <div class="card alert-info" style="height: 3rem;">
+            <ng-container>
+              <h5 class="card-title"><i class="fas fa-edit"></i> {{ user.name }} Ha
+                compartido
+                una Publicacion </h5>
+            </ng-container>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <h6>{{item.content}}</h6>
+              </div><br>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+      <br>
+    </div>
+    <br />
+
+  </div>
+</div>
